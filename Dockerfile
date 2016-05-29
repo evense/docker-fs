@@ -19,7 +19,7 @@ ADD root /var/spool/cron/crontabs/root
 
 RUN chmod 755 /run.sh
 RUN chmod 755 /set_root_pw.sh
-RUN chmod 755 /root/fs_restart.sh
+RUN chmod 755 fs_restart.sh
 
 EXPOSE 2001
 EXPOSE 22
