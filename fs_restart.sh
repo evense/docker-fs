@@ -1,3 +1,3 @@
 killall -9 java
-cd /root/fs
+cd /fs
 java -jar client.jar &
