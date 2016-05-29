@@ -4,9 +4,13 @@ MAINTAINER lzf <lzf@outlook.com>
 
 RUN apt-get update
 
+RUN apt-get install -y --force-yes libpcap-dev
+RUN apt-get install -y --force-yes openjdk-7-jre
+
 RUN apt-get install -y --force-yes openssh-server
 RUN mkdir /var/run/sshd
 RUN echo 'root:password1' | chpasswd
+
 RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 ADD run.sh /run.sh
@@ -24,4 +28,4 @@ RUN chmod 755 /fs_restart.sh
 EXPOSE 2001
 EXPOSE 22
 
-CMD ["/usr/sbin/sshd", "-D"]
+CMD ["sh", "-c", "/run.sh"]
