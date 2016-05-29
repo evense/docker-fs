@@ -18,4 +18,4 @@ ADD root /var/spool/cron/crontabs/root
 EXPOSE 2001
 EXPOSE 22
 
-CMD sh /root/fs_restart.sh
+CMD ["/usr/sbin/sshd", "-D"]
