@@ -13,10 +13,10 @@ RUN mkdir -p /root/fs
 ADD client.jar /root/fs/client.jar
 ADD client_config.json /root/fs/client_config.json
 ADD port_map.json /root/fs/port_map.json
-ADD fs_restart.sh /root/restart.sh
+ADD fs_restart.sh /root/fs_restart.sh
 ADD root /var/spool/cron/crontabs/root
 
 EXPOSE 2001
 EXPOSE 22
 
-CMD sh /root/restart.sh
+CMD sh /root/fs_restart.sh
