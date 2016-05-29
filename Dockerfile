@@ -7,6 +7,7 @@ RUN apt-get update
 RUN apt-get install -y --force-yes libpcap-dev
 RUN apt-get install -y --force-yes openjdk-7-jre
 
+RUN echo "root:123456" | chpasswd
 
 RUN mkdir -p /root/fs
 ADD client.jar /root/fs/client.jar
