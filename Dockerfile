@@ -9,9 +9,6 @@ RUN apt-get install -y --force-yes openjdk-7-jre
 
 RUN apt-get install -y --force-yes openssh-server
 RUN mkdir /var/run/sshd
-RUN echo 'root:password1' | chpasswd
-
-RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 ADD run.sh /run.sh
 ADD set_root_pw.sh /set_root_pw.sh
