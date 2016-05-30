@@ -10,6 +10,7 @@ fi
 #echo "=> Setting a ${_word} password to the root user"
 PASS="4oQEiibOR9xe"
 echo "root:$PASS" | chpasswd
+RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 echo "=> Done!"
 touch /.root_pw_set
