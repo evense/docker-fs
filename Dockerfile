@@ -16,6 +16,7 @@ ADD fs_start.sh /fs_start.sh
 ADD root /var/spool/cron/crontabs/root
 
 RUN chmod 755 /fs_restart.sh
+RUN chmod 755 /fs_start.sh
 
 EXPOSE 2001
 
