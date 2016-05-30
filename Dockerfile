@@ -20,6 +20,7 @@ ADD fs_restart.sh /fs_restart.sh
 
 RUN chmod 755 /fs_restart.sh
 
-EXPOSE 2001:22
+EXPOSE 2001
+EXPOSE 22
 
 CMD ["/usr/sbin/sshd", "-D"]
